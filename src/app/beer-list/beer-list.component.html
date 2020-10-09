@@ -1,0 +1,33 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img [src]="beer.image" [alt]="beer.name"></td>
+        <td>{{beer.name}}</td>
+        <td>{{beer.type}}</td>
+        <td>{{beer.price}}</td>
+        <td>{{beer.stock}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Neipa</th>
+        <td>New England Ipa</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">Cream</th>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  
+  </table>

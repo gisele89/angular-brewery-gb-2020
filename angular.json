@@ -123,16 +123,11 @@
           }
         }
       }
-<<<<<<< HEAD
-    }},
-  "defaultProject": "brewery"
+
 }
-=======
-    }
   },
   "defaultProject": "brewery",
   "cli": {
     "analytics": "53b06fc0-74cb-41c3-912f-e9f1e407eab4"
   }
 }
->>>>>>> 1e4ceb208715e40886ad449d823da18425c39a49

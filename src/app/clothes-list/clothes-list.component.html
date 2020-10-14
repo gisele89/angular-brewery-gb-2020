@@ -9,24 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let clothes of clothingItems" [ngClass] ="{'clearance':clothes.clearance}" >
         <td><img [src]="clothes.image" [alt]="clothes.name"></td>
         <td>{{clothes.name}}</td>
         <td>{{clothes.type}}</td>
-        <td>{{clothes.price}}</td>
-        <td>{{clothes.stock}}</td>
-      </tr>
-      <tr>
-        <th scope="row">Neipa</th>
-        <td>New England Ipa</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">Cream</th>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{clothes.price | currency}}</td>
+        <td *ngIf="clothes.stock !=0; else noStock">{{clothes.stock}}</td>
+        <ng-template #noStock><td class="badge badge-secondary">Sin stock</td></ng-template>
       </tr>
     </tbody>
   

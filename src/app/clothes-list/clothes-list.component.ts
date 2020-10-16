@@ -16,6 +16,7 @@ export class ClothesListComponent implements OnInit {
       stock: 5,
       image: '/assets/campera-rock1.jpg',
       clearance: false,
+      quantity: 0,
     },
     {
       name: 'RockStar',
@@ -24,6 +25,7 @@ export class ClothesListComponent implements OnInit {
       stock: 3,
       image: '/assets/campera-rock1.jpg',
       clearance: true,
+      quantity: 0,
     },
     {
       name: 'PopRock',
@@ -32,11 +34,25 @@ export class ClothesListComponent implements OnInit {
       stock: 0,
       image: '/assets/campera-rock1.jpg',
       clearance: false,
+      quantity: 0,
     },
   ] ;
   constructor() { }
 
   ngOnInit(): void {
   }
+  upQuantity(clothes: Clothes): void{
+    if (clothes.quantity < clothes.stock){
+      clothes.quantity ++;
+    }
+  }
+  downQuantity(clothes: Clothes): void{
+    if (clothes.quantity > 0) {
+    clothes.quantity --;
+    }
+ }
 
+changeQuantity(event, clothes: Clothes): void{
+console.log(event.target);
+}
 }

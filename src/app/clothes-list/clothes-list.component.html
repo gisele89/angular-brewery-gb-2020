@@ -1,28 +1,27 @@
 <table class="table text-center">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Imagen</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Tipo</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col">Compra</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let clothes of clothingItems" [ngClass] ="{'clearance':clothes.clearance}" >
-        <td><img width="90"class= "img-thumbnail"[src]="clothes.image" [alt]="clothes.name"></td>
-        <td>{{clothes.name}}</td>
-        <td>{{clothes.type}}</td>
-        <td>{{clothes.price | currency}}</td>
-        <td *ngIf="clothes.stock !=0; else noStock">{{clothes.stock}}</td>
-        <ng-template #noStock><td class="badge badge-secondary">Sin stock</td></ng-template>
-        <td class= "ams-buttons">
-          <button type="button" class="btn btn-secondary btn-sm" (click)="downQuantity(clothes)">-</button>
-          <input type="text" [(ngModel)]="clothes.quantity" (keyup)="changeQuantity($event, clothes)">
-          <button type="button" class="btn btn-secondary btn-sm" (click)="upQuantity(clothes)">+</button>
-        </td>
-      </tr>
-    </tbody>
-  
-  </table>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Compra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let clothes of clothingItems" [ngClass]="{'clearance':clothes.clearance}">
+      <td><img width="90" class="img-thumbnail" [src]="clothes.image" [alt]="clothes.name"></td>
+      <td>{{clothes.name}}</td>
+      <td>{{clothes.type}}</td>
+      <td>{{clothes.price | currency}}</td>
+      <td *ngIf="clothes.stock !=0; else noStock">{{clothes.stock}}</td>
+      <ng-template #noStock>
+        <td class="badge badge-secondary">Sin stock</td>
+      </ng-template>
+      <td class="ams-buttons">
+       <app-input-number [(quantity)]="clothes.quantity" [max]="clothes.stock" *ngIf = "clothes.stock" (maxReached)="maxReached($event)"></app-input-number>
+      </td>
+    </tr>
+  </tbody>
+</table>

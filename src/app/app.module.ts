@@ -8,6 +8,7 @@ import { ClothesCartComponent } from './clothes-cart/clothes-cart.component';
 import { FormsModule} from '@angular/forms';
 import { AmsterdamContactComponent } from './amsterdam-contact/amsterdam-contact.component';
 import { AmsterdamClothesComponent } from './amsterdam-clothes/amsterdam-clothes.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AmsterdamClothesComponent } from './amsterdam-clothes/amsterdam-clothes
     ClothesListComponent,
     ClothesCartComponent,
     AmsterdamContactComponent,
-    AmsterdamClothesComponent
+    AmsterdamClothesComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

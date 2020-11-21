@@ -8,7 +8,7 @@ import { Clothes } from './Clothes';
 })
 export class ClothesListComponent implements OnInit {
 
-  clothingItems: Clothes [] = [
+  clothingItems: Clothes[] = [
     {
       name: 'Rock',
       type: 'Campera de cuero',
@@ -36,23 +36,12 @@ export class ClothesListComponent implements OnInit {
       clearance: false,
       quantity: 0,
     },
-  ] ;
+  ];
   constructor() { }
 
   ngOnInit(): void {
   }
-  upQuantity(clothes: Clothes): void{
-    if (clothes.quantity < clothes.stock){
-      clothes.quantity ++;
-    }
+  maxReached(m: string): void {
+    alert(m);
   }
-  downQuantity(clothes: Clothes): void{
-    if (clothes.quantity > 0) {
-    clothes.quantity --;
-    }
- }
-
-changeQuantity(event, clothes: Clothes): void{
-console.log(event.target);
-}
 }

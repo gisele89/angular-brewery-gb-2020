@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClothesCartService } from '../clothes-cart.service';
+import { ClothesDataService } from '../clothes-data.service';
 import { Clothes } from './Clothes';
 
 @Component({
@@ -10,7 +11,7 @@ import { Clothes } from './Clothes';
 export class ClothesListComponent implements OnInit {
 
   clothingItems: Clothes[] = [
-    {
+    /*{
       name: 'Rock',
       type: 'Campera de cuero',
       price: 200,
@@ -37,10 +38,11 @@ export class ClothesListComponent implements OnInit {
       clearance: false,
       quantity: 0,
     },
-  ];
-  constructor(private cart: ClothesCartService) { }
+  */];
+  constructor(private cart: ClothesCartService, private clothesDataService: ClothesDataService ) { }
 
   ngOnInit(): void {
+    this.clothesDataService.getAll().subscribe(clothingItems => this.clothingItems = clothingItems);
   }
   addToCart(clothes): void {
     this.cart.addToCart(clothes);

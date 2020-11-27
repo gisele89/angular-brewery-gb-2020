@@ -9,7 +9,7 @@ import { FormsModule} from '@angular/forms';
 import { AmsterdamContactComponent } from './amsterdam-contact/amsterdam-contact.component';
 import { AmsterdamClothesComponent } from './amsterdam-clothes/amsterdam-clothes.component';
 import { InputNumberComponent } from './input-number/input-number.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { InputNumberComponent } from './input-number/input-number.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

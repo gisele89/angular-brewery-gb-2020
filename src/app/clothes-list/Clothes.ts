@@ -6,5 +6,4 @@
     image: string;
     clearance: boolean;
     quantity: number;
-
 }
